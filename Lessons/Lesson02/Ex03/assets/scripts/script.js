@@ -39,7 +39,7 @@ console.log(number2)
 const BUTTON = document.getElementById("special-button");
 const BOX = document.getElementById("result");
 const INPUT = document.getElementById("userInput")
-/*The code above showw how you can target an HTML element by its id.*/
+/*The code above showa how you can target an HTML element by its id.*/
 
 let number = 0;
 

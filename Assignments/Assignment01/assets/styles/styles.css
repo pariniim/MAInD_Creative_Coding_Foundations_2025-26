@@ -44,13 +44,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         color: violet;
     }
 
-    #light-grey {
+    #grey {
         color: Grey;
     } 
 
 /*//Media Queries//*/    
 /*Media Query for Mobile*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     body {
         background-color: cornsilk;
     }
@@ -87,16 +87,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .element-area {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 0 4rem;
     }
 
     .element-area p {
         margin: 0.6rem 0.5rem;
-        padding: 0.3rem 0.4rem;
-        border-radius: 0.2rem;
+        padding: 0.8rem;
+        min-width: 5rem;
         background-color:rgb(40, 40, 40);
         color: cornsilk;
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
 
     .button-area {
@@ -104,10 +105,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         padding: 0 2rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     button {
-        flex: 0 0 auto;
+        width: 30vh;
         border: none;
         border-radius: 0.6rem;
         margin: 0.5rem 0;
@@ -121,8 +123,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 
 
-/*Media Query for Tables & Large Phones*/
-@media screen and (min-width: 600px) and (max-width: 992px) {
+/*Media Query for Tablets & Large Phones*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
     body {
         background-color: darkred;
     }
@@ -139,10 +141,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     article {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }   
 
     .interaction-section {
+        width: 33%;
         margin: 1rem 3rem;
         padding: 2rem;
         border-radius: 2.5rem;
@@ -159,16 +163,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .element-area {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 0 6rem;
     }
 
     .element-area p {
         margin: 0.6rem 0.5rem;
-        padding: 0.3rem 0.4rem;
-        border-radius: 0.2rem;
+        padding: 0.6rem;
         background-color:rgb(40, 40, 40);
         color: cornsilk;
         font-size: 0.7rem;
+        min-width: 5rem;
     }
 
     .button-area {
@@ -176,9 +181,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         padding: 0 2rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
-    button {
+    button { 
+        width: 50vh;
         border: none;
         border-radius: 0.6rem;
         margin: 0.5rem 0;
@@ -191,7 +198,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 /*Media Query for Desktop*/
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 769px){
     body {
         background-color: orchid;
     }
@@ -208,12 +215,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     article {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }   
 
     .interaction-section {
-        margin: 1rem 0.7rem;
-        padding: 0.7rem;
+        margin: 1rem 0.9rem;
+        width: 22%;
+        padding: 3rem;
         border-radius: 2.5rem;
         background-color: lightsalmon;
         box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
@@ -227,14 +237,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     .element-area {
         display: flex;
-        flex-direction: column;
-        margin: 0 4rem;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .element-area p {
         margin: 0.6rem 0.5rem;
         padding: 0.3rem 0.4rem;
-        border-radius: 0.2rem;
         background-color:rgb(40, 40, 40);
         color: cornsilk;
         font-size: 0.7rem;
@@ -244,19 +255,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         margin: 1.7rem 0;
         padding: 0 2rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     button {
         border: none;
-        border-radius: 0.6rem;
+        border-radius: 1rem;
         margin: 0.5rem 0;
-        padding: 0.5rem 0.9rem; 
+        padding: 0.7rem; 
         background-color: rgb(255, 255, 255, 76%);
         box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
         text-transform: uppercase;
         font-weight: 800;
     }
 }
-
 
