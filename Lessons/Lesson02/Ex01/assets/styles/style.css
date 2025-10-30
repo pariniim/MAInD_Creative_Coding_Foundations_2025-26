@@ -1,0 +1,107 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* body {
+  background-color: aliceblue;
+} */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: coral;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 0.4rem;
+  text-transform: capitalize;
+}
+
+h2 {
+  color:rgb(81, 167, 138);
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+
+p {
+  color: rgb(65, 65, 65);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+}
+
+a {
+  color: rgb(65, 65, 65);
+  background-color:rgb(165, 212, 197);
+  border: 0.3rem solid rgb(102, 130, 121);
+  border-radius: 0.8rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: block;
+  width: 50vh;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+a:hover {
+  background-color: blanchedalmond;
+  border: 0.5rem solid rgb(250, 157, 213);
+}
+
+#myflexbox {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#myflexbox div {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.box {
+  background-color:rgb(250, 157, 213);
+}
+
+#special {
+  background-color: blueviolet;
+  /* display: flex; */
+  text-align: center;
+
+}
+#special img {
+    width: 50vh;
+}
+
+.box img {
+  width: 50vh;
+}
+
+@media only screen and (min-width: 600px) {
+  
+  body {
+    background-color: salmon;
+  }
+	
+	
+}

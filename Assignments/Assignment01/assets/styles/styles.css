@@ -1,0 +1,106 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+
+body {
+    background-color: cornsilk;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1.1rem;
+}
+
+h1, h2 {
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    h1 {
+        margin: 3rem 0 2rem 0;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}    
+
+.interaction-section {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    background-color: lightsalmon;
+    box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
+    text-align: center;
+}
+
+p {
+    padding: 0.8rem 0 0 0; 
+}
+
+.element-area {
+    display: flex;
+}
+
+.element-area p {
+    margin: 0 0.5rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 0.2rem;
+    background-color:rgb(40, 40, 40);
+    color: cornsilk;
+    font-size: 0.8rem;
+}
+
+.button-area {
+    margin: 1.7rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    border: none;
+    border-radius: 0.6rem;
+    margin: 0.5rem;
+    padding: 0.5rem 0.9rem; 
+    background-color: rgb(255, 255, 255, 76%);
+    box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
+    text-transform: uppercase;
+    font-weight: 800;
+
+}
+
+#light-salmon {
+    color: lightsalmon;
+}
+
+#turquoise {
+    color: turquoise;
+}
+
+#violet {
+    color: violet;
+}
+
+#light-grey {
+    color: Grey;
+}
