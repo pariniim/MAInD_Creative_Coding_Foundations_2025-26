@@ -9,7 +9,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /*//General styles//*/
     body {
-        background-color: navajowhite;
+        background-image: url('../images/background-72250_1280.jpg');;
     }
 
    h1 {
@@ -20,22 +20,37 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         font-weight: 700;
     }
 
+    button {
+        border: none;
+        border-radius: 1rem;
+        background-color: black;
+        padding: 1rem;
+        margin: 1.2rem auto;
+        color: lightgrey;
+        text-align:center;
+        display:block;
+    }
+
     .Pin {
-        box-shadow: 0.3rem 0.3rem 0.7rem rgb(71, 71, 71, 85%);
+        box-shadow: 0.3rem 0.3rem 0.7rem rgba(34, 34, 34, 0.85);
     }
 
     #Pin1 {
-        background-color: lightgrey;
+        background-color: rgb(202, 191, 191, 0.8);
     }
 
     #Pin2 {
-        background-color: turquoise;
+        background-color: rgb(9, 255, 243, 0.8);
         margin-top: 3.5rem; 
     }
 
     #Pin3 {
-        background-color: lightsalmon;
+        background-color: rgb(253, 166, 132, 0.8);
         margin-top: 2rem;
+    }
+
+    #Pin4 {
+        background-color: rgb(81, 61, 10, 0.7);
     }
 
     #gallery {
@@ -46,6 +61,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .Pin img {
         border-radius: 1rem;
     }
+
     li {
         list-style: none;
     }
@@ -94,6 +110,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     h1 {
+        padding: 2rem 0;
         font-size: 3rem;
         text-align: center;
     }
@@ -114,7 +131,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .Comment {
         font-size: 1rem;
         text-align: justify;
-        width: 20rem;
+        min-width: 20rem;
     }
 }
 
