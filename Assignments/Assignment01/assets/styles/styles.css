@@ -1,3 +1,4 @@
+/*//Resetting browser defaults//*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -6,101 +7,256 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
 }
 
+/*//General styles//*/
+/*Font family setting*/
+    body {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 1.1rem;
+    }
 
-body {
-    background-color: cornsilk;
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 1.1rem;
-}
+    h1, h2 {
+        font-family: "Delius Swash Caps", cursive;
+        font-style: normal;
+    }
 
-h1, h2 {
-    font-family: "Delius Swash Caps", cursive;
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-@media screen and (min-width: 480px) and (max-width: 768px) {
     h1 {
-        margin: 3rem 0 2rem 0;
-        font-size: 3rem;
+        font-weight: 800;
+    }
+
+    h2 {
+        font-weight: 700;
+    }
+
+/*Button text color for 1st section*/
+    #light-salmon {
+        color: lightsalmon;
+    }
+
+    #turquoise {
+        color: turquoise;
+    }
+
+    #violet {
+        color: violet;
+    }
+
+    #light-grey {
+        color: Grey;
+    } 
+
+/*//Media Queries//*/    
+/*Media Query for Mobile*/
+@media screen and (max-width: 600px) {
+    body {
+        background-color: cornsilk;
+    }
+
+    h1 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.9rem;
         text-align: center;
     }
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .interaction-section {
+        margin: 1rem 0.7rem;
+        padding: 0.7rem;
+        border-radius: 2.5rem;
+        background-color: lightsalmon;
+        box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
+        text-align: center;
+    }
+
+    .description {
+        padding: 1rem 0 0 0;
+        font-size: 0.9rem;
+    }
+
+    .element-area {
+        display: flex;
+        flex-direction: column;
+        margin: 0 4rem;
+    }
+
+    .element-area p {
+        margin: 0.6rem 0.5rem;
+        padding: 0.3rem 0.4rem;
+        border-radius: 0.2rem;
+        background-color:rgb(40, 40, 40);
+        color: cornsilk;
+        font-size: 0.7rem;
+    }
+
+    .button-area {
+        margin: 1.7rem 0;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        flex: 0 0 auto;
+        border: none;
+        border-radius: 0.6rem;
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.9rem; 
+        background-color: rgb(255, 255, 255, 76%);
+        box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
+        text-transform: uppercase;
+        font-weight: 800;
     }
 }
 
 
 
+/*Media Query for Tables & Large Phones*/
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    body {
+        background-color: darkred;
+    }
 
-article {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}    
+    h1 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 2.5rem;
+        text-align: center;
+    }
 
-.interaction-section {
-    margin: 2rem 1rem;
-    padding: 1rem;
-    border-radius: 2.5rem;
-    background-color: lightsalmon;
-    box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
-    text-align: center;
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .interaction-section {
+        margin: 1rem 3rem;
+        padding: 2rem;
+        border-radius: 2.5rem;
+        background-color: lightsalmon;
+        box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
+        text-align: center;
+    }
+
+    .description {
+        padding: 1rem 0 0 0;
+        font-size: 0.9rem;
+    }
+
+    .element-area {
+        display: flex;
+        flex-direction: column;
+        margin: 0 6rem;
+    }
+
+    .element-area p {
+        margin: 0.6rem 0.5rem;
+        padding: 0.3rem 0.4rem;
+        border-radius: 0.2rem;
+        background-color:rgb(40, 40, 40);
+        color: cornsilk;
+        font-size: 0.7rem;
+    }
+
+    .button-area {
+        margin: 1.7rem 0;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        border: none;
+        border-radius: 0.6rem;
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.9rem; 
+        background-color: rgb(255, 255, 255, 76%);
+        box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
 }
 
-p {
-    padding: 0.8rem 0 0 0; 
+/*Media Query for Desktop*/
+@media screen and (min-width: 992px) {
+    body {
+        background-color: orchid;
+    }
+
+    h1 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .interaction-section {
+        margin: 1rem 0.7rem;
+        padding: 0.7rem;
+        border-radius: 2.5rem;
+        background-color: lightsalmon;
+        box-shadow: 3px 4px 6px rgb(40, 40, 40, 65%) ;
+        text-align: center;
+    }
+
+    .description {
+        padding: 1rem 0 0 0;
+        font-size: 0.9rem;
+    }
+
+    .element-area {
+        display: flex;
+        flex-direction: column;
+        margin: 0 4rem;
+    }
+
+    .element-area p {
+        margin: 0.6rem 0.5rem;
+        padding: 0.3rem 0.4rem;
+        border-radius: 0.2rem;
+        background-color:rgb(40, 40, 40);
+        color: cornsilk;
+        font-size: 0.7rem;
+    }
+
+    .button-area {
+        margin: 1.7rem 0;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        border: none;
+        border-radius: 0.6rem;
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.9rem; 
+        background-color: rgb(255, 255, 255, 76%);
+        box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
 }
 
-.element-area {
-    display: flex;
-}
 
-.element-area p {
-    margin: 0 0.5rem;
-    padding: 0.3rem 0.4rem;
-    border-radius: 0.2rem;
-    background-color:rgb(40, 40, 40);
-    color: cornsilk;
-    font-size: 0.8rem;
-}
-
-.button-area {
-    margin: 1.7rem 0;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-button {
-    border: none;
-    border-radius: 0.6rem;
-    margin: 0.5rem;
-    padding: 0.5rem 0.9rem; 
-    background-color: rgb(255, 255, 255, 76%);
-    box-shadow: 3px 3px 3px rgb(40, 40, 40, 85%) ;
-    text-transform: uppercase;
-    font-weight: 800;
-
-}
-
-#light-salmon {
-    color: lightsalmon;
-}
-
-#turquoise {
-    color: turquoise;
-}
-
-#violet {
-    color: violet;
-}
-
-#light-grey {
-    color: Grey;
-}
