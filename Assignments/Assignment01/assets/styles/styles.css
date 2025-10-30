@@ -31,6 +31,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         font-weight: 700;
     }
 
+    .element-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
 /*Button text color for 1st section*/
     #light-salmon {
         color: lightsalmon;
@@ -85,9 +93,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     .element-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin: 0 4rem;
     }
 
@@ -146,7 +151,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }   
 
     .interaction-section {
-        width: 33%;
+        width: 40%;
         margin: 1rem 3rem;
         padding: 2rem;
         border-radius: 2.5rem;
@@ -161,9 +166,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     .element-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin: 0 6rem;
     }
 
@@ -185,7 +187,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     button { 
-        width: 50vh;
+        width: 12rem;
         border: none;
         border-radius: 0.6rem;
         margin: 0.5rem 0;
@@ -235,14 +237,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         font-size: 0.9rem;
     }
 
-    .element-area {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
+ 
     .element-area p {
         margin: 0.6rem 0.5rem;
         padding: 0.3rem 0.4rem;
@@ -262,6 +257,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     button {
+        width: 50rem;
         border: none;
         border-radius: 1rem;
         margin: 0.5rem 0;
