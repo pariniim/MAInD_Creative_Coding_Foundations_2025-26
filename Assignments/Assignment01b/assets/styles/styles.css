@@ -1,0 +1,222 @@
+/*//Resetting browser defaults//*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+/*Font family setting*/
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Indie Flower", cursive;
+    font-style: normal;
+}
+
+/*//General styles//*/
+body {
+    background-color: #FFD18E;
+}
+
+h1 {
+    font-weight: 800;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+
+#controls {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0 2rem 0;
+}
+
+button {
+    border: none;
+    border-radius: 1.6rem;
+    box-shadow: 3px 3px 0.4rem rgb(71, 70, 70);
+    padding: 1rem 1.4rem;
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+#light-mode-btn {
+    background-color: white;
+    color: rgb(29, 29, 29);
+}
+
+#dark-mode-btn {
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+
+#add-game-btn {
+    background-color: #E9FF97;
+    color: rgb(29, 29, 29);
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+/*Light Mode CSS code (default)*/
+    .h1-light {
+        color: black;
+    }
+
+    .game-title {
+        background-color: black;
+        color: #FF7EE2;
+    }
+
+    .comment {
+        color: black;
+    }
+
+
+/*Dark Mode CSS code*/
+    .h1-dark {
+        color: white;
+    }
+
+    .game-title-dark {
+        background-color: white;
+    }
+
+    .comment-dark {
+        color: white;
+    }
+
+
+/*//Media Queries//*/    
+/*Media Query for Mobile*/
+@media screen and (max-width: 480px) {
+    h1 {
+        padding: 2rem 0 0 0 ;
+        font-size: 2rem;
+    }
+
+    #videogames {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    .gamecard {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .game-title {
+        padding: 0.6rem; 
+        width: 100vh;
+        font-size: 1.6rem;
+    }
+
+    .gamecard img {
+        height: 50vh;
+        width: 100vh;
+    }
+
+    .caption {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    .comment {
+        padding: 0.4rem 0.6rem;        
+        max-width: 25rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-align: justify;
+
+    }
+
+}
+
+
+
+
+/*Media Query for Tablets & Large Phones*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+   h1 {
+        padding: 2rem 0 0 0 ;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #videogames {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    .gamecard {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .game-title {
+        padding: 0.6rem; 
+        width: 100vh;
+        font-size: 1.6rem;
+    }
+
+    .gamecard img {
+        height: 50vh;
+        width: 100vh;
+    }
+
+    .caption {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    .comment {
+        padding: 0.4rem 0.6rem;        
+        max-width: 25rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-align: justify;
+
+    }
+
+  
+}
+
+/*Media Query for Desktop*/
+@media screen and (min-width: 769px){
+
+    #videogames {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #flex-grow-2 {
+        flex-grow: 2;
+    }
+}
+
+
