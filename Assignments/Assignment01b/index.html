@@ -17,22 +17,27 @@
 <body>
     <header>
         <h1>My Video Game Pinboard</h1>
-        <div id="color-mode-controls">
-                <button id="light-mode-btn">Enable Light Mode</button>  
-                <button id="dark-mode-btn">Enable Dark Mode (default)</button>  
-        </div>
-        <div id="view-controls">
-            <button id="column-view-btn">Change view to column</button>
-            <button id="row-view-btn">Change view to row (default)</button>
-        </div>    
+        <div id="controls">
+            <div id="color-mode-controls">
+                    <button id="light-mode-btn">Enable Light Mode</button>  
+                    <button id="dark-mode-btn">Enable Dark Mode (default)</button>  
+            </div>
+            <div id="view-controls">
+                <button id="column-view-btn">Change view to column</button>
+                <button id="row-view-btn">Change view to row (default)</button>
+            </div> 
+        </div>   
     </header>    
     <main>
         <section id="videogames">
             <div class="gamecard">
                 <h2 class="game-title">The Witcher 3: Wild Hunt (2015)</h2>
-                <img src="./assets/images/The-Witcher-3-review-image-5.jpg" alt="The Witcher 3: Wild Hunt" />
+                <div id="first-image-space">
+                    <img src="./assets/images/The-Witcher-3-review-image-5.jpg" alt="The Witcher 3: Wild Hunt" id="first-game-img" />
+                </div>    
                 <figcaption class="caption">CD Project Red's "The Witcher 3: Wild Hunt".</figcaption> 
-                <button id="remove-image">Remove image and caption above</button>
+                <button id="remove-first-image-btn">Remove image above</button>
+                <button id="place-first-image-btn">Place image above again</button>
                 <div class="gamecard-text">
                     <p class="comment">
                         One of my all-time favorites and one of the greatest RPGs of all times, DLCs included!
@@ -40,7 +45,8 @@
                     <div class="my-rating">My Rating:<span class="rating-number">10</span>/10.
                     </div>
                     <div class="user-rating-area">    
-                        <label for="first-game-rating">Add your own rating for this game series: </label><br /><input type="number" name="first-game-rating" placeholder="Your rating" id="first-game-rating" min="1" max="10" /> 
+                        <label for="first-game-rating">Add your own rating for this game series: </label><br />
+                        <input type="number" name="first-game-rating" placeholder="Your rating" id="first-game-rating" min="1" max="10" /> 
                         <button id="first-game-rating-submit-btn">Rate series</button>
                         <div id="first-game-rating-place">
                         </div>
@@ -49,8 +55,12 @@
             </div>    
             <div class="gamecard">
                 <h2 class="game-title">Portal (2007)</h2>
-                <img src="./assets/images/portal2.jpg" alt="Portal 2" />
+                <div id="second-image-space">
+                    <img src="./assets/images/portal2.jpg" alt="Portal 2" id="second-game-img" />
+                </div>
                 <figcaption class="caption">Valve's "Portal 2"</figcaption>
+                <button id="remove-second-image-btn">Remove image above</button>
+                <button id="place-second-image-btn">Place image above again</button>
                 <div class="gamecard-text">            
                     <p class="comment">
                         "Portal" and "Portal 2" are the best puzzle games ever. Loved both of them.
@@ -58,7 +68,8 @@
                     <div class="my-rating">My Rating for the Portal game series:<span class="rating-number"> 10</span>/10.
                     </div>
                     <div class="user-rating-area">    
-                        <label for="second-game-rating">Add your own rating for this game series: </label><br /><input type="number" name="second-game-rating" placeholder="Your rating" id="second-game-rating" min="1" max="10" /> 
+                        <label for="second-game-rating">Add your own rating for this game series: </label><br />
+                        <input type="number" name="second-game-rating" placeholder="Your rating" id="second-game-rating" min="1" max="10" /> 
                         <button id="second-game-rating-submit-btn">Rate series</button>
                         <div id="second-game-rating-place">
                         </div>
@@ -67,8 +78,12 @@
             </div>             
             <div class="gamecard">   
                 <h2 class="game-title">Mass Effect Trilogy (2012)</h2>                     
-                <img src="./assets/images/mass-effect-3-female-shepard-cover-wallpaper-4.jpg" alt = "Mass Effect" />
-                <figcaption class="caption">BioWare's "Mass Effect Legendary Edition"</figcaption>           
+                <div id="third-image-space">
+                    <img src="./assets/images/mass-effect-3-female-shepard-cover-wallpaper-4.jpg" alt = "Mass Effect" id="third-game-img" />
+                </div>
+                <figcaption class="caption">BioWare's "Mass Effect Legendary Edition"</figcaption>       
+                <button id="remove-third-image-btn">Remove image above</button>
+                <button id="place-third-image-btn">Place image above again</button>                    
                 <div class="gamecard-text"></div>                        
                     <p class="comment">
                         I haven't played the remastered Legendary Trilogy Edition and did not finish "Mass Effect: Andromeda" yet, but the original trilogy is another series I adore, despite the ending of the third installment being disappointing before the patch it received.

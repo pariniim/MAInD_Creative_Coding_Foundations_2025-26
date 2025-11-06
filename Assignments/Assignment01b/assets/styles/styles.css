@@ -56,6 +56,8 @@ button {
     box-shadow: 3px 3px 0.4rem rgb(71, 70, 70);
     padding: 1rem 1.4rem;
     margin: 1rem 0;
+    width: fit-content;
+    height: 3rem;
     font-weight: 600;
 }
 
@@ -73,7 +75,8 @@ button {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem; 
+    margin: 1rem 0 2rem 0;
 
 }
 
@@ -81,6 +84,26 @@ button {
     background-color: #E9FF97;
 }
 
+#place-first-image-btn,
+#remove-first-image-btn,
+#place-second-image-btn,
+#remove-second-image-btn,
+#place-third-image-btn,
+#remove-third-image-btn {
+    background-color: #E9FF97;
+}
+
+#place-first-image-btn {
+    display: none;
+}
+
+#place-second-image-btn {
+    display: none;
+}
+
+#place-third-image-btn {
+    display: none;
+}
 
 .rating {
     font-weight: 600;
@@ -92,20 +115,32 @@ button {
     font-size: larger;
 }
 
+.user-rating-area {
+    background-color: rgb(233, 255, 151, 0.6); 
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
 .user-rating-area label {
     font-style: italic;
     font-size: smaller;
-    color: #fcd6cd; 
 }
 
 .user-rating-area input {
-    background-color: #fcd6cd;
+    background-color: #E9FF97;
     border-radius: 0.3rem;
 }
 
 .user-rating-area button {
-    background-color: #FFA38F;
+    background-color: #E9FF97;
 }
+
+#first-game-rating-place,
+#second-game-rating-place,
+#third-game-rating-place {
+    font-weight: 600;
+}
+
 
 /*Light Mode CSS code*/
 
@@ -173,13 +208,11 @@ button {
         font-weight: 400;
     }
 
-    .comment {
-  
+    .comment {  
         max-width: 25rem;
         font-size: 0.9rem;
         font-weight: 400;
         text-align: justify;
-
     }
 
     .my-rating {
@@ -191,8 +224,6 @@ button {
         width: 9rem;
         height: 2rem;
     }
-
-
 }
 
 
@@ -272,6 +303,17 @@ button {
     h2 {
         padding: 1rem; 
         font-size: 1.8rem;
+    }
+
+    #controls {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    #view-controls {
+        border-left: 3px solid rgb(140, 140, 140); 
+        padding-left: 3rem;
     }
 
     #videogames {
