@@ -141,6 +141,9 @@ button {
     font-weight: 600;
 }
 
+.user-rating-number {
+    color: #FF7EE2;
+}
 
 /*Light Mode CSS code*/
 
@@ -174,10 +177,10 @@ button {
 
     #videogames {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
-
     }
 
     .gamecard {
@@ -312,13 +315,14 @@ button {
     }
 
     #view-controls {
-        border-left: 3px solid rgb(140, 140, 140); 
+        border-left: 5px solid rgb(140, 140, 140); 
         padding-left: 3rem;
     }
 
     #videogames {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         flex-wrap: wrap;
     }
 
@@ -349,6 +353,7 @@ button {
     }
 
     .my-rating {
+        padding: 0 0.6rem;     
         margin: 2.3rem 0;
     }
     

@@ -50,7 +50,7 @@ SUBMIT_SECOND_GAME_USER_RATING.addEventListener("click", () => {
     let SECOND_USER_RATING = document.getElementById("second-game-rating").value;
 
     USER_SECOND_GAME_RATING_PLACE.innerHTML = "<p>Your rating is:</p>" + SECOND_USER_RATING + "/10";
-    SECOND_USER_RATING.style.color = "#FF7EE2";
+    
     
 })
 
@@ -61,7 +61,7 @@ const REMOVE_RATING_BTN = document.querySelector(".remove-button");
 
 SUBMIT_THIRD_GAME_USER_RATING.addEventListener("click", () => {
     let THIRD_USER_RATING = document.getElementById("third-game-rating").value;
-    
+
     USER_THIRD_GAME_RATING_PLACE.innerHTML = "<p>Your rating is:</p>" + THIRD_USER_RATING +"/10";
     
 }) 
@@ -78,7 +78,6 @@ COLUMN_VIEW_BTN.addEventListener("click", () => {
 
 //Code for changing view to ROW (default) in Dekstop screens
 const ROW_VIEW_BTN = document.getElementById("row-view-btn");
-const GAMESVIEW_ROW = document.getElementById("videogames");
 
 ROW_VIEW_BTN.addEventListener("click", () => {
     document.getElementById("videogames").style.flexDirection = "row";
