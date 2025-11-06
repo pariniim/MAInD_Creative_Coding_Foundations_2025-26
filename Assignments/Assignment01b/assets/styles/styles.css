@@ -119,6 +119,7 @@ button {
     background-color: rgb(233, 255, 151, 0.6); 
     padding: 1rem;
     border-radius: 0.3rem;
+    width: fit-content;
 }
 
 .user-rating-area label {
@@ -227,6 +228,7 @@ button {
         width: 9rem;
         height: 2rem;
     }
+
 }
 
 

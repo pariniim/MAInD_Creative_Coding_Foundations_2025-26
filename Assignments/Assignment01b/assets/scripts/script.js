@@ -73,7 +73,7 @@ const GAMESVIEW_COLUMN = document.getElementById("videogames");
 
 COLUMN_VIEW_BTN.addEventListener("click", () => {
     document.getElementById("videogames").style.flexDirection = "column";
-    document.getElementById("videogames").style.justifyContent = "space-around";
+    document.getElementById("videogames").style.alignItems= "center";
 })
 
 //Code for changing view to ROW (default) in Dekstop screens

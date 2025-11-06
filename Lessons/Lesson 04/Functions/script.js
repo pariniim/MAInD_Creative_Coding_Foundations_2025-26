@@ -5,7 +5,7 @@
 }
 
 greet("Elia", "Sarah");
-//Elia and Sarah are values of the function. 
+//Elia and Sarah are ARGUMENTS of the function. 
 
 //In this example: If you declare a variable before the function, but then add another variable to the function in the round brackets, the latter will be used as variable for the function due to the scope concept.
 const person1 = Isabel; 
@@ -30,3 +30,5 @@ function printInfo(name, surname, course) {
 function printGrades(name, surname, grade) {
     console.log(fullName(name, surname) + ", grade: " + grade);
 }
+
+//There can be MULTIDIMENSIONAL ARRAYS: in that case you fetch the data in this way. e.g. y [4][2] --> y[4] returns the fifth element of an array, that in this case happens to be another array and since you just want to fetch the third element, you add [2].
