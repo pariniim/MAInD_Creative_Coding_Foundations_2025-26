@@ -7,7 +7,7 @@ const LIGHT_MODE_BTN = document.getElementById("light-mode-btn");
 
 LIGHT_MODE_BTN.addEventListener("click", () => {
     document.body.style.background = "none";
-    document.body.style.backgroundColor = "#508c9cff";
+    document.body.style.backgroundColor = "#c98374ff";
     document.querySelector("h1").style.color = "white";
 
     allH2.forEach((el ) => {
