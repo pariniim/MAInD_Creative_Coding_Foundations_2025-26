@@ -1,0 +1,124 @@
+//CANVAS variables
+const CANVAS = document.getElementById("playground");
+const CONTEXT = CANVAS.getContext("2d");
+
+let x = CANVAS.width / 2;
+let y = CANVAS.height - 30;
+
+//Ball radius
+const BALL_RADIUS = 10;
+
+//Ball movement variables
+let dx = 2;
+let dy = -2;
+
+//Paddle variables
+const PADDLE_HEIGHT = 10;
+const PADDLE_WIDTH = 75;
+let PADDLE_START_X = (CANVAS.width - PADDLE_WIDTH) / 2;
+
+//Variables for buttons
+let BTN_PRESSED_RIGHT = false;
+let BTN_PRESSED_LEFT = false;
+
+//Interval variable
+let interval = 0;
+
+//Bricks variables
+const BRICK_ROW_COUNT = 3;
+const BRICK_COL_COUNT = 5;
+const BRICK_WIDTH = 75;
+const BRICK_HEIGHT = 20;
+const BRICK_PADDING = 10;
+const BRICK_OFFSET_TOP = 30;
+const BRICK_OFFSET_LEFT = 30;
+
+//Loop for bricks creation
+const BRICKS = [];
+
+for (let c = 0; c < BRICK_COL_COUNT; c++) {
+    BRICKS[c] = [];
+    for (let r = 0; r < BRICK_ROW_COUNT; r++) {
+        BRICKS[c][r] = { x: 0, y: 0 };
+    }
+}
+
+function drawBall() {
+    //Drawing the ball
+    CONTEXT.beginPath();
+    CONTEXT.arc(x, y, BALL_RADIUS, 0, Math.PI * 2);
+    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.fill();
+    CONTEXT.closePath();
+}
+
+function drawPaddle() {
+    //Drawing the paddle
+    CONTEXT.beginPath();
+    CONTEXT.rect(PADDLE_START_X, CANVAS.height - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT);
+    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.fill();
+    CONTEXT.closePath();
+}
+
+function draw() {
+    CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+    drawBall();
+    drawPaddle();
+    if (x + dx > CANVAS.width - BALL_RADIUS || x + dx < BALL_RADIUS) {
+        dx = -dx;
+    } 
+
+    if (y + dy < BALL_RADIUS) {
+    dy = -dy;
+    } else if (y + dy > CANVAS.height - BALL_RADIUS) {
+    if (x > PADDLE_START_X && x < PADDLE_START_X + PADDLE_WIDTH) {
+        dy = -dy;
+        } else {
+            alert("GAME OVER");
+            document.location.reload();
+            clearInterval(interval);
+        }
+    }
+
+    if (BTN_PRESSED_RIGHT) {
+        PADDLE_START_X = Math.min(PADDLE_START_X + 7, CANVAS.width - PADDLE_WIDTH);
+    } else if (BTN_PRESSED_LEFT) {
+        PADDLE_START_X = Math.max(PADDLE_START_X - 7, 0);
+    }
+
+    x += dx;
+    y += dy;
+}
+
+
+//Button handlers
+function KEY_DOWN_HANDLER(e) {
+    if (e.key === "Right" || e.key === "ArrowRight") {
+        BTN_PRESSED_RIGHT = true;
+    } else if (e.key === "Left" || e.key === "ArrowLeft") {
+        BTN_PRESSED_LEFT = true;
+    }
+}
+
+function KEY_UP_HANDLER(e) {
+    if (e.key === "Right" || e.key === "ArrowRight") {
+        BTN_PRESSED_RIGHT = false;
+    } else if (e.key === "Left" || e.key === "ArrowLeft") {
+        BTN_PRESSED_LEFT = false;
+    }
+}
+
+//Function for starting the game
+function startGame() {
+    document.addEventListener("keydown", KEY_DOWN_HANDLER);
+    document.addEventListener("keyup", KEY_UP_HANDLER);
+    interval = setInterval(draw, 10);
+}
+
+//Start button
+const START_BUTTON = document.getElementById("start-btn");
+START_BUTTON .addEventListener("click", () => {
+  startGame();
+  START_BUTTON.disabled = true;
+});

@@ -2,14 +2,15 @@
 const PLAYGROUND = document.getElementById("playground");
 const CONTEXT = playground.getContext("2d");
 
-let PLAYGROUND_WIDTH = PLAYGROUND.width / 2;
-let PLAYGROUND_HEIGHT = PLAYGROUND.height - 120;
+
 
 let PLAYGROUND_WIDTH_ADDITION = 2;
-let PLAYGROUND_HEIGHT_ADDITION = 2;
+let PLAYGROUND_HEIGHT_ADDITION = -2;
 
 //Variables for moving ball
 const BALL_RADIUS = 8;
+let BALL_X = PLAYGROUND.width / 2;
+let PLAYGROUND_HEIGHT = PLAYGROUND.height - 25;
 
 //Variables for paddle
 const PADDLE_HEIGHT = 8;
@@ -30,7 +31,7 @@ const BRICK_OFFSET_TOP = 15;
 const BRICK_OFFSET_LEFT = 25;
 
 
-//Moving ball
+//Drawing the moving ball
 function drawBall() {
     CONTEXT.beginPath();
     CONTEXT.arc(PLAYGROUND_WIDTH, PLAYGROUND_HEIGHT, BALL_RADIUS, 0, 2 * Math.PI);
@@ -66,6 +67,21 @@ function drawBricks() {
     }
 }
 
+//Collision detection for bricks 
+function bricksCollisionDetection() {
+    for (let c = 0; c < BRICKS_COLUMNS_AMOUNT; c++) {
+        for (let r = 0; r < BRICKS_ROWS_AMOUNT; r++) {
+            const b = BRICKS[c][r];
+            // calculations
+            if (x > b.x && xPLAYGROUND_WIDTH < b.x + BRICK_WIDTH && PLAYGROUND_HEIGHT > b.y && PLAYGROUND_HEIGHT < b.y + BRICK_HEIGHT) {
+                PLAYGROUND_HEIGHT_ADDITION = -PLAYGROUND_HEIGHT_ADDITION;
+            }
+            
+        }
+    }
+}
+
+
 //Player's paddle
 function drawPaddle() {
     CONTEXT.beginPath();
@@ -96,21 +112,20 @@ function draw() {
     }
 }
 
-    if (PLAYGROUND_WIDTH + PLAYGROUND_WIDTH_ADDITION < 0 || PLAYGROUND_WIDTH + PLAYGROUND_WIDTH_ADDITION > PLAYGROUND.width) {
+    if (PLAYGROUND_WIDTH + PLAYGROUND_WIDTH_ADDITION < 0 || PLAYGROUND_WIDTH +  PLAYGROUND_WIDTH_ADDITION > PLAYGROUND.width) {
         PLAYGROUND_WIDTH_ADDITION = -PLAYGROUND_WIDTH_ADDITION;
     }
-    
-
 
     PLAYGROUND_WIDTH += PLAYGROUND_WIDTH_ADDITION;
     PLAYGROUND_HEIGHT += PLAYGROUND_HEIGHT_ADDITION;
 
-    drawPaddle()
+    drawPaddle();
     if (pressedRight) {
         PADDLE_START_X = Math.min(PADDLE_START_X + 8, PLAYGROUND.width - PADDLE_WIDTH);
     } else if (pressedLeft) {
         PADDLE_START_X = Math.max(PADDLE_START_X - 8, 0);
     }    
+    bricksCollisionDetection();
 }
 
 //Starting the game
@@ -127,6 +142,7 @@ START_BUTTON.addEventListener("click", () => {
     START_BUTTON.disabled = true;
 })
 
+//Keyboard control functions
 function keyDownHandler(e) {
     if (e.key === "Right" || e.key === "ArrowRight") {
         pressedRight = true; 
