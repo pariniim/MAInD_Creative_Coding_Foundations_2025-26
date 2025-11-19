@@ -43,6 +43,9 @@ for (let c = 0; c < BRICK_COL_COUNT; c++) {
     }
 }
 
+//Variable for player's score 
+let PLAYER_SCORE = 0;
+
 //Function for drawing the bricks
 function drawBricks() {
   for (let c = 0; c < BRICK_COL_COUNT; c++) {
@@ -62,20 +65,30 @@ function drawBricks() {
   }
 }
 
+//Function for creating the score
+function createScore() {
+    CONTEXT.font = "16px Arial";
+    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 8, 20);
+}
+
 //Function for bricks collision detection 
 function collisionDetection() {
     for (let c = 0; c < BRICK_COL_COUNT; c++) {
         for (let r = 0; r < BRICK_ROW_COUNT; r++) {
         const b = BRICKS[c][r];
-            if (b.status === 1) {
-                if (x > b.x && x < b.x + BRICK_WIDTH && y > b.y && y < b.y + BRICK_HEIGHT) {
-                    dy = -dy;
-                    b.status = 0;
-                }
+        if (b.status === 1) {
+            if (x > b.x && x < b.x + BRICK_WIDTH && y > b.y && y < b.y + BRICK_HEIGHT) {
+                dy = -dy;
+                b.status = 0;
+                PLAYER_SCORE++;
             }
+        }
         }
     }
 }
+
+
 
 function drawBall() {
     //Drawing the ball
@@ -106,15 +119,15 @@ function draw() {
     } 
 
     if (y + dy < BALL_RADIUS) {
-    dy = -dy;
-    } else if (y + dy > CANVAS.height - BALL_RADIUS) {
-    if (x > PADDLE_START_X && x < PADDLE_START_X + PADDLE_WIDTH) {
         dy = -dy;
-        } else {
-            alert("GAME OVER");
-            document.location.reload();
-            clearInterval(interval);
-        }
+    } else if (y + dy > CANVAS.height - BALL_RADIUS) {
+        if (x > PADDLE_START_X && x < PADDLE_START_X + PADDLE_WIDTH) {
+            dy = -dy;
+            } else {
+                alert("GAME OVER");
+                document.location.reload();
+                clearInterval(interval);
+            } 
     }
 
     if (BTN_PRESSED_RIGHT) {
@@ -125,6 +138,8 @@ function draw() {
 
     x += dx;
     y += dy;
+
+    createScore();       
 }
 
 
