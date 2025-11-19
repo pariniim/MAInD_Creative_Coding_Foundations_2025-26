@@ -1,4 +1,4 @@
-//CANVAS variables
+//Canvas variables
 const CANVAS = document.getElementById("playground");
 const CONTEXT = CANVAS.getContext("2d");
 
@@ -34,12 +34,46 @@ const BRICK_OFFSET_TOP = 30;
 const BRICK_OFFSET_LEFT = 30;
 
 //Loop for bricks creation
-const BRICKS = [];
+let BRICKS = [];
 
 for (let c = 0; c < BRICK_COL_COUNT; c++) {
     BRICKS[c] = [];
     for (let r = 0; r < BRICK_ROW_COUNT; r++) {
-        BRICKS[c][r] = { x: 0, y: 0 };
+        BRICKS[c][r] = { x: 0, y: 0, status: 1 };
+    }
+}
+
+//Function for drawing the bricks
+function drawBricks() {
+  for (let c = 0; c < BRICK_COL_COUNT; c++) {
+    for (let r = 0; r < BRICK_ROW_COUNT; r++) {
+      if (BRICKS[c][r].status === 1) {
+        const BRICK_POS_X = c * (BRICK_WIDTH + BRICK_PADDING) + BRICK_OFFSET_LEFT;
+        const BRICK_POS_Y = r * (BRICK_HEIGHT + BRICK_PADDING) + BRICK_OFFSET_TOP;
+        BRICKS[c][r].x = BRICK_POS_X ;
+        BRICKS[c][r].y = BRICK_POS_Y;
+        CONTEXT.beginPath();
+        CONTEXT.rect(BRICK_POS_X, BRICK_POS_Y, BRICK_WIDTH, BRICK_HEIGHT);
+        CONTEXT.fillStyle = "#0095DD";
+        CONTEXT.fill();
+        CONTEXT.closePath();
+      }
+    }
+  }
+}
+
+//Function for bricks collision detection 
+function collisionDetection() {
+    for (let c = 0; c < BRICK_COL_COUNT; c++) {
+        for (let r = 0; r < BRICK_ROW_COUNT; r++) {
+        const b = BRICKS[c][r];
+            if (b.status === 1) {
+                if (x > b.x && x < b.x + BRICK_WIDTH && y > b.y && y < b.y + BRICK_HEIGHT) {
+                    dy = -dy;
+                    b.status = 0;
+                }
+            }
+        }
     }
 }
 
@@ -63,8 +97,10 @@ function drawPaddle() {
 
 function draw() {
     CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+    drawBricks();
     drawBall();
     drawPaddle();
+    collisionDetection();
     if (x + dx > CANVAS.width - BALL_RADIUS || x + dx < BALL_RADIUS) {
         dx = -dx;
     } 
