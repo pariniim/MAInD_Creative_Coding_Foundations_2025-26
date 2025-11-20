@@ -2,7 +2,7 @@
 const CANVAS = document.getElementById("playground");
 const CONTEXT = CANVAS.getContext("2d");
 
-let x = CANVAS.width / 2;
+let x = CANVAS.width / 3.4;
 let y = CANVAS.height - 30;
 
 //Ball radius
@@ -14,11 +14,7 @@ let dy = -3;
 
 //Paddle variables
 const PADDLE_HEIGHT = 15;
-const PADDLE_WIDTH = Math.floor(Math.random() * 150);
-
-if (PADDLE_WIDTH < 50) {
-    PADDLE_WIDTH = 50;
-} 
+const PADDLE_WIDTH = 70;
 
 let PADDLE_START_X = (CANVAS.width - PADDLE_WIDTH) / 2;
 
@@ -80,6 +76,7 @@ function createScore() {
     CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 8, 20);
 }
 
+//Function for creating the lives
 function createLives() {
     CONTEXT.font = "16px Arial";
     CONTEXT.fillStyle = "#282828ff";
@@ -97,7 +94,7 @@ function collisionDetection() {
                 b.status = 0;
                 PLAYER_SCORE++;
                 if (PLAYER_SCORE === BRICK_ROW_COUNT * BRICK_COL_COUNT) {
-                    alert("YOU WIN, CONGRATULATIONS!");
+                    alert("YOU WIN!");
                     document.location.reload();
                     clearInterval(interval); // For Chrome browsers
                 }
@@ -148,7 +145,7 @@ function draw() {
                     document.location.reload();
                     clearInterval(interval); // for Chrome browsers
                 } else {
-                        x = CANVAS.width / 2;
+                        x = CANVAS.width / 3;
                         y = CANVAS.height - 30;
                         dx = 3;
                         dy = -3;
