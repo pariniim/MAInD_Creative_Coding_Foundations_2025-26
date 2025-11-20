@@ -104,9 +104,8 @@ function collisionDetection() {
     }
 }
 
-
+//Function for drawing the ball
 function drawBall() {
-    //Drawing the ball
     CONTEXT.beginPath();
     CONTEXT.arc(x, y, BALL_RADIUS, 0, Math.PI * 2);
     CONTEXT.fillStyle = "#FF76CE";
@@ -114,8 +113,8 @@ function drawBall() {
     CONTEXT.closePath();
 }
 
+//Function for drawing the paddle 
 function drawPaddle() {
-    //Drawing the paddle
     CONTEXT.beginPath();
     CONTEXT.roundRect(PADDLE_START_X, CANVAS.height - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, 60);
     CONTEXT.fillStyle = "#94FFD8";
@@ -123,6 +122,7 @@ function drawPaddle() {
     CONTEXT.closePath();
 }
 
+//Main function
 function draw() {
     CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
     drawBricks();
@@ -169,7 +169,7 @@ function draw() {
 
 
 //Button handlers
-function KEY_DOWN_HANDLER(e) {
+function keyDownHandler(e) {
     if (e.key === "Right" || e.key === "ArrowRight") {
         BTN_PRESSED_RIGHT = true;
     } else if (e.key === "Left" || e.key === "ArrowLeft") {
@@ -177,7 +177,7 @@ function KEY_DOWN_HANDLER(e) {
     }
 }
 
-function KEY_UP_HANDLER(e) {
+function keyUpHandler(e) {
     if (e.key === "Right" || e.key === "ArrowRight") {
         BTN_PRESSED_RIGHT = false;
     } else if (e.key === "Left" || e.key === "ArrowLeft") {
@@ -187,8 +187,8 @@ function KEY_UP_HANDLER(e) {
 
 //Function for starting the game
 function startGame() {
-    document.addEventListener("keydown", KEY_DOWN_HANDLER);
-    document.addEventListener("keyup", KEY_UP_HANDLER);
+    document.addEventListener("keydown", keyDownHandler);
+    document.addEventListener("keyup", keyUpHandler);
     interval = setInterval(draw, 10);
 }
 
