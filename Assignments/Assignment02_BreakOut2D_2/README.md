@@ -15,7 +15,14 @@ Choose a “mini-game” to rebuild with HTML, CSS and JavaScript. The requireme
 ![second screenshot](./DOCS/pinboard_screenshot_2.png)
 
 ## Project Description
-This game ... 
+The goal of this short game is to destroy all the blue bricks with the pink ball by letting it bounce off the paddle and walls. 
+
+The user can control the green paddle using the left and right arrow keys to move the paddle to the left and to the right, respectively. 
+
+Each time the ball touches the floor, the player loses one life. Once the lives are depleted, the game is over. 
+
+The score is kept and grows according to how many bricks have been destroyed. 
+
 
 ## Block Diagram
 ![block diagram](./DOCS/pinboard_screenshot_2.png)

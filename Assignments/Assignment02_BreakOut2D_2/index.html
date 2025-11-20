@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Slackey&display=swap" rel="stylesheet">
 
-    <title>Break Out Game in 2D</title>
+    <title>Destroy the bricks!</title>
 </head>
 <body>
+    <header>
+            <h1>Destroy the bricks!</h1>
+    </header>        
     <main>
-        <h1>Break Out Game in 2D</h1>
-        <canvas width="480" height="320" id="playground"></canvas> 
-        <button id="start-btn">Start Game</button>  
+        <div id="game-rules">   
+            <p>User your arrow keys to move the green paddle on the bottom of the playground. User the left arrow key to move it to the left; use the right arrow key to move the paddle to the right.</p>
+            <p>Try to hit the blue bricks by letting the ball bounce around the playground, from one wall to the other. Destroy all bricks to win the game.</p>
+            <p>If the ball hits the floow (bottom wall), you will lose one life. Once you have lost all lives, the game ends. 
+        </div>   
+        <div id="game-area">
+            <canvas width="480" height="320" id="playground"></canvas> 
+            <button id="start-btn">Start Game</button>  
+        </div>        
     </main>      
 </body>
     <script src="./assets/script.js"></script>

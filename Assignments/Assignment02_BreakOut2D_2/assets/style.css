@@ -6,21 +6,49 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
 }
 
+
+body {
+    background-color: #FDFFC2;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
 h1 {
+    padding: 4rem 0 3rem 0;
+    font-family: "Slackey", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 4rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
 }
 
 canvas {
-    background-color: lightsalmon;
+    background-color: white;
     display: block;
-    margin: 1rem auto;
     border: 3px solid black;
     border-radius: 2rem;
 }
 
-#start-game-btn {
+#start-btn {
     margin: 2rem auto;
     display: block;
+}
+
+#game-area {
+    padding: 0 1rem 0 4rem;
+   
+}
+
+#game-rules {
+    padding: 0 1rem 0 4rem;
+    width: 30rem;
+    
 }

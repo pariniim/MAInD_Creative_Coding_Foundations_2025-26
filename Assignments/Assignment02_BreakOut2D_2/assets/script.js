@@ -6,15 +6,20 @@ let x = CANVAS.width / 2;
 let y = CANVAS.height - 30;
 
 //Ball radius
-const BALL_RADIUS = 10;
+const BALL_RADIUS = 10; 
 
 //Ball movement variables
-let dx = 2;
-let dy = -2;
+let dx = 3;
+let dy = -3;
 
 //Paddle variables
-const PADDLE_HEIGHT = 10;
-const PADDLE_WIDTH = 75;
+const PADDLE_HEIGHT = 15;
+const PADDLE_WIDTH = Math.floor(Math.random() * 150);
+
+if (PADDLE_WIDTH < 50) {
+    PADDLE_WIDTH = 50;
+} 
+
 let PADDLE_START_X = (CANVAS.width - PADDLE_WIDTH) / 2;
 
 //Variables for buttons
@@ -46,6 +51,9 @@ for (let c = 0; c < BRICK_COL_COUNT; c++) {
 //Variable for player's score 
 let PLAYER_SCORE = 0;
 
+//Variable for player's lives
+let PLAYER_LIVES = 5;
+
 //Function for drawing the bricks
 function drawBricks() {
   for (let c = 0; c < BRICK_COL_COUNT; c++) {
@@ -57,7 +65,7 @@ function drawBricks() {
         BRICKS[c][r].y = BRICK_POS_Y;
         CONTEXT.beginPath();
         CONTEXT.rect(BRICK_POS_X, BRICK_POS_Y, BRICK_WIDTH, BRICK_HEIGHT);
-        CONTEXT.fillStyle = "#0095DD";
+        CONTEXT.fillStyle = "#A3D8FF";
         CONTEXT.fill();
         CONTEXT.closePath();
       }
@@ -68,8 +76,14 @@ function drawBricks() {
 //Function for creating the score
 function createScore() {
     CONTEXT.font = "16px Arial";
-    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.fillStyle = "#282828ff";
     CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 8, 20);
+}
+
+function createLives() {
+    CONTEXT.font = "16px Arial";
+    CONTEXT.fillStyle = "#282828ff";
+    CONTEXT.fillText(`Lives: ${PLAYER_LIVES}`, CANVAS.width - 65, 20);
 }
 
 //Function for bricks collision detection 
@@ -82,6 +96,11 @@ function collisionDetection() {
                 dy = -dy;
                 b.status = 0;
                 PLAYER_SCORE++;
+                if (PLAYER_SCORE === BRICK_ROW_COUNT * BRICK_COL_COUNT) {
+                    alert("YOU WIN, CONGRATULATIONS!");
+                    document.location.reload();
+                    clearInterval(interval); // For Chrome browsers
+                }
             }
         }
         }
@@ -89,12 +108,11 @@ function collisionDetection() {
 }
 
 
-
 function drawBall() {
     //Drawing the ball
     CONTEXT.beginPath();
     CONTEXT.arc(x, y, BALL_RADIUS, 0, Math.PI * 2);
-    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.fillStyle = "#FF76CE";
     CONTEXT.fill();
     CONTEXT.closePath();
 }
@@ -102,8 +120,8 @@ function drawBall() {
 function drawPaddle() {
     //Drawing the paddle
     CONTEXT.beginPath();
-    CONTEXT.rect(PADDLE_START_X, CANVAS.height - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT);
-    CONTEXT.fillStyle = "#0095DD";
+    CONTEXT.roundRect(PADDLE_START_X, CANVAS.height - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, 60);
+    CONTEXT.fillStyle = "#94FFD8";
     CONTEXT.fill();
     CONTEXT.closePath();
 }
@@ -124,9 +142,18 @@ function draw() {
         if (x > PADDLE_START_X && x < PADDLE_START_X + PADDLE_WIDTH) {
             dy = -dy;
             } else {
-                alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval);
+                PLAYER_LIVES--;
+                if (!PLAYER_LIVES) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                    clearInterval(interval); // for Chrome browsers
+                } else {
+                        x = CANVAS.width / 2;
+                        y = CANVAS.height - 30;
+                        dx = 3;
+                        dy = -3;
+                        PADDLE_START_X = (CANVAS.width - PADDLE_WIDTH) / 2;
+                    }
             } 
     }
 
@@ -140,6 +167,7 @@ function draw() {
     y += dy;
 
     createScore();       
+    createLives();
 }
 
 
