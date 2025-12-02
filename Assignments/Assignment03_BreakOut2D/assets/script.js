@@ -124,6 +124,8 @@ function drawBricks() {
 function createScore() {
     CONTEXT.font = "16px Arial";
     CONTEXT.fillStyle = "#282828ff";
+    CONTEXT.textAlign = "left";      
+    CONTEXT.textBaseline = "top";   
     CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 12, 20);
 }
 
@@ -131,6 +133,8 @@ function createScore() {
 function createLives() {
     CONTEXT.font = "16px Arial";
     CONTEXT.fillStyle = "#282828ff";
+    CONTEXT.textAlign = "right";     
+    CONTEXT.textBaseline = "top"    
     CONTEXT.fillText(`Lives: ${PLAYER_LIVES}`, CANVAS.width - 65, 20);
 }
 
@@ -138,6 +142,8 @@ function createLives() {
 function createLevel() {
     CONTEXT.font = "16px Arial";
     CONTEXT.fillStyle = "#282828ff";
+    CONTEXT.textAlign = "center";    
+    CONTEXT.textBaseline = "top";
     CONTEXT.fillText(`Level: ${LEVEL}`, CANVAS.width / 2 - 20, 20);
 }
 
