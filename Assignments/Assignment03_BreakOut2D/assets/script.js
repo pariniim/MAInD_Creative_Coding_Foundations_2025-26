@@ -126,7 +126,7 @@ function createScore() {
     CONTEXT.fillStyle = "#282828ff";
     CONTEXT.textAlign = "left";      
     CONTEXT.textBaseline = "top";   
-    CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 12, 20);
+    CONTEXT.fillText(`Score: ${PLAYER_SCORE}`, 12, 10);
 }
 
 //Function for creating the lives
@@ -135,7 +135,7 @@ function createLives() {
     CONTEXT.fillStyle = "#282828ff";
     CONTEXT.textAlign = "right";     
     CONTEXT.textBaseline = "top"    
-    CONTEXT.fillText(`Lives: ${PLAYER_LIVES}`, CANVAS.width - 65, 20);
+    CONTEXT.fillText(`Lives: ${PLAYER_LIVES}`, CANVAS.width - 65, 10);
 }
 
 //Function for creating the level(s)
@@ -144,7 +144,7 @@ function createLevel() {
     CONTEXT.fillStyle = "#282828ff";
     CONTEXT.textAlign = "center";    
     CONTEXT.textBaseline = "top";
-    CONTEXT.fillText(`Level: ${LEVEL}`, CANVAS.width / 2 - 20, 20);
+    CONTEXT.fillText(`Level: ${LEVEL}`, CANVAS.width / 2 - 20, 10);
 }
 
 /////////EXPLANATION////////////////////// 
