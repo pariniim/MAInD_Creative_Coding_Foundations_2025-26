@@ -15,114 +15,108 @@ The application **must** have those requirements:
 - Develop a navigation system that allows the user to navigate different sections with related content and functionalities
 
 ## Screenshots
-![first screenshot](./DOCS/Screenshot%202025-11-20%20160206.png)
-![second screenshot](./DOCS/Screenshot%202025-11-20%20160247.png)
+![first screenshot](./DOCS/Screenshot_2025_1.png)
+![second screenshot](./DOCS/Screenshot_2025_2.png)
 
 ## Project Description
-The goal of this short game is to destroy all the blue bricks with the pink ball by letting it bounce off the paddle and walls. 
+The goal of this game is to destroy all the bricks that change color after each session, with the ball by letting it bounce off the paddle (whose color also changes) and walls. 
 
 The game keeps track of the score, which increases according to how many bricks have been destroyed. 
 
-The user can control the green paddle using the left and right arrow keys to move the paddle to the left and to the right, respectively. 
+The user can control the paddle using the left and right arrow keys. 
 
-Each time the ball touches the floor, the player loses one life. Once the lives are depleted, the game is over. 
+Each time the ball touches the floor, the player loses one life, but can continue playing. Once the lives are depleted, the game is over. 
+
+If the user wins, they get to the next level. Difficulty increases with each level, as the paddle schrinks and the ball movement speeds up progressively. 
 
 ## Block Diagram
-![block diagram](./DOCS/Brick_destroyer_flowchart.jpg)
+![block diagram](./DOCS/flowchart.jpeg)
 
 ## List of Functions
-//Function for drawing the ball
-function drawBall() 
+### Color & Brick Functions
+#### fetchColors()
+- Description: Fetches random color schemes from The Color API for bricks and paddle.
+- Arguments: None.
+- Returns: A Promise (from fetch). Updates global BRICK_COLOR and PADDLE_COLOR.
 
-//Function for paddle drawing
-function drawPaddle() 
+#### drawBricks()
+- Description: Draws all bricks on the canvas based on their position and status.
+- Arguments: None.
+- Returns: Nothing. Draws rectangles on the canvas.
 
-//Function for drawing the bricks
-function drawBricks()
+### HUD (Score, Lives, Level)
+#### createScore()
+- Description: Displays the current player score at the top-left of the canvas.
+- Arguments: None.
+- Returns: Nothing. Draws text.
 
-//Function for creating the score
-function createScore() 
+#### createLives()
+- Description: Displays the remaining player lives at the top-right of the canvas.
+- Arguments: None.
+- Returns: Nothing. Draws text.
 
-//Function for creating the lives
-function createLives() 
+#### createLevel()
+- Description: Displays the current level number at the top-center of the canvas.
+- Arguments: None.
+- Returns: Nothing. Draws text.
 
-//Function for bricks collision detection 
-function collisionDetection() 
+### Collision & Game Logic
+#### collisionDetection()
+- Description: Checks if the ball collides with any active brick. Updates score, brick status, and triggers level win if all bricks are cleared.
+- Arguments: None.
+- Returns: Nothing. Updates global state (PLAYER_SCORE, levelWin, winTimer).
 
-//Main function
-function draw() 
+### Ball & Paddle Drawing
+#### drawBall()
+- Description: Draws the ball at its current position.
+- Arguments: None.
+- Returns: Nothing. Draws a circle on the canvas.
 
-//Button handlers
-function keyDownHandler(e) 
-function keyUpHandler(e) 
+#### drawPaddle()
+- Description: Draws the paddle at its current position.
+- Arguments: None.
+- Returns: Nothing. Draws a rounded rectangle on the canvas.
 
-//Function for starting the game
-function startGame()     
+### Level & State Management
+#### nextLevel()
+- Description: Advances to the next level. Resets ball position, increases ball speed, shrinks paddle, resets bricks, and fetches new colors.
+- Arguments: None.
+- Returns: Nothing. Updates global state.
 
+### Messages
+#### drawLevelWin()
+- Description: Displays a “YOU WIN LEVEL X!” message centered on the canvas.
+- Arguments: None.
+- Returns: Nothing. Draws text.
 
-### Function #01 - drawBall()
-#### Expected Parameters
-None.
-#### Expression Logic (What it does)
-Draws the ball on the canvas. 
+#### drawGameOver()
+- Description: Displays a “GAME OVER!” message centered on the canvas and plays a sound.
+- Arguments: None.
+- Returns: Nothing. Draws text and plays audio.
 
-### Function #02 - drawPaddle() 
-None.
-#### Expression Logic (What it does)
-Draws the paddle on the canvas. 
+### Main Game Loop
+#### draw()
+- Description: Main rendering and game logic loop. Clears canvas, draws bricks, ball, paddle, checks collisions, handles ball movement, paddle movement, win/game over states, and updates HUD.
+- Arguments: None.
+- Returns: Nothing. Continuously updates canvas and global state.
 
-### Function #03 - drawBricks()
-None.
-#### Expression Logic (What it does)
-Draws a series of bricks on the canvas based on loops. 
+### Input Handlers
+#### keyDownHandler(e)
+- Description: Handles key press events. Sets flags for left/right arrow keys.
+- Arguments: e (KeyboardEvent).
+- Returns: Nothing. Updates global flags (BTN_PRESSED_LEFT, BTN_PRESSED_RIGHT).
 
-### Function #04 - createScore() 
-#### Expected Parameters
-None.
-#### Expression Logic (What it does)
-Keeps track of the score and prints it on the top part of the game area (right hand side).
-#### Return Values (What values it returns, if any)
-Returns the status of theh player's score.
+#### keyUpHandler(e)
+- Description: Handles key release events. Resets flags for left/right arrow keys.
+- Arguments: e (KeyboardEvent).
+- Returns: Nothing. Updates global flags.
 
-### Function #05 - createLives() 
-#### Expected Parameters
-#### Expression Logic (What it does)
-Keeps track of the lives and prints them on the top part of the game area (left hand side).
-#### Return Values (What values it returns, if any)
-Retruns the status of the player's lives.
+### Game Start
+#### startGame()
+- Description: Initializes game state (lives, level), fetches colors, attaches event listeners, and starts the game loop.
+- Arguments: None.
+- Returns: Nothing. Starts interval loop (INTERVAL = setInterval(draw, 10)).
 
-### Function #06 - collisionDetection() 
-#### Expected Parameters
-#### Expression Logic (What it does)
-Detects whether collisions between ball and bricks happen. Calculates the score and checks whether the player has won the game. In that case, ends the game.
-#### Return Values (What values it returns, if any)
-Returns the player's score or victory. 
-
-### Function #07 - draw() 
-#### Expected Parameters
-#### Expression Logic (What it does)
-Main function of the game with calls all the functions that draw the elements on the canvas. It also checks the status of the player's lives and alerts "GAME OVER" once the pool of lives has been depleted. 
-#### Return Values (What values it returns, if any)
-
-### Function #08 - keyDownHandler(e) 
-#### Expected Parameters
-Click event.
-#### Expression Logic (What it does)
-Allows the player to move the paddle to the right and left using the right and left key arrows. Fires when pressed. 
-#### Return Values (What values it returns, if any)
-
-### Function #09 - keyUpHandler(e) 
-#### Expected Parameters
-Click event.
-#### Expression Logic (What it does)
-Fires when keys are released while the user moves the paddle with the right and left key arrows.  
-#### Return Values (What values it returns, if any)
-
-### Function #10 - startGame()     
-#### Expected Parameters
-#### Expression Logic (What it does)
-Starts the game when the user clicks on the "Start Game" button.
-#### Return Values (What values it returns, if any)
-
-## Content & Data Sources
-add link 
+## API
+[add link ](https://www.thecolorapi.com)
+An open source, free-to-use API for fetching random color schemes and random single colors. 
