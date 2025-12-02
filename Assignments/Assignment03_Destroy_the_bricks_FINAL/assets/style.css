@@ -9,6 +9,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
     background-color: #FFF1F1;
+    background-image: url("./texture-2068283_1920.png");
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;

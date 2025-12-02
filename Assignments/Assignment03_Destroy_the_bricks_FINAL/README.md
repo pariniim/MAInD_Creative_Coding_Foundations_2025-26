@@ -1,14 +1,18 @@
 # Assignment 02
 
 ## Brief 
-Choose a “mini-game” to rebuild with HTML, CSS and JavaScript. The requirements are:
+Upgrade the **Assignment 02** by adding the use of data coming from an external web API. For example, fetch contents (audio, images, video, text, metadata) from online archives, AI generated contents (chatGPT API), data (weather, realtime traffic data, environmental data).
 
-    - The webpage should be responsive
-    - Choose an avatar at the beginning of the game
-    - Keep track of the score of the player
-    - Use the keyboard to control the game (indicate what are the controls in the page). You can also use buttons (mouse), but also keyboard.
-    - Use some multimedia files (audio, video, …)
-    - Implement an “automatic restart” in the game (that is not done via the refresh of the page)
+Have a look at the lesson about the API:
+
+[https://wind-submarine-3d4.notion.site/Lesson-5-200d516637bc811aba69e13b0ffe438f?pvs=74](https://www.notion.so/Lesson-5-200d516637bc811aba69e13b0ffe438f?pvs=21)
+
+The application **must** have those requirements:
+
+- The webpage is responsive
+- Use a web API (you choose which one best fists for your project) to load the data and display them in the webpage
+- At least one multimedia file (for user feedback interactions, or content itself)
+- Develop a navigation system that allows the user to navigate different sections with related content and functionalities
 
 ## Screenshots
 ![first screenshot](./DOCS/Screenshot%202025-11-20%20160206.png)
