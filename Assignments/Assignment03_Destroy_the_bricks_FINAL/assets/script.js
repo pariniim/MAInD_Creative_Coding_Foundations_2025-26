@@ -18,7 +18,7 @@ let dy = -3;
 const PADDLE_HEIGHT = 15;
 let PADDLE_WIDTH = 180;
 
-let PADDLE_COLOR = "#94FFD8";  // default paddle color
+let PADDLE_COLOR = "#94FFD8";  //Default paddle color
 let PADDLE_START_X = (CANVAS.width - PADDLE_WIDTH) / 2;
 
 
@@ -40,7 +40,7 @@ const BRICK_PADDING = 10;
 const BRICK_OFFSET_TOP = 30;
 const BRICK_OFFSET_LEFT = 30;
 
-let BRICK_COLOR = "#A3D8FF";   // default brick color
+let BRICK_COLOR = "#A3D8FF";   //Default brick color
 
 
 //Variable for level
